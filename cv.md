@@ -41,3 +41,10 @@ _2007 - 2013_
 - B2C sales _2007-2009_
 - Head of sales _2009-2013_
 - CO-FOUNDER AND CBDO _2014-2023_
+
+## Languages
+
+- Russian (native)
+- Belarusian (native)
+- English (A2 - Epam Test)
+- Polish (A1)
