@@ -1,26 +1,14 @@
-background-color: #000;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbb', endColorstr='#000');
-background-image: -webkit-gradient(
-  linear,
-  left top,
-  left bottom,
-  from(#bbb),
-  to(#000)
-);
-background-image: -webkit-linear-gradient(top, #bbb, #000);
-background-image: -moz-linear-gradient(top, #bbb, #000);
-background-image: -ms-linear-gradient(top, #bbb, #000);
-background-image: -o-linear-gradient(top, #bbb, #000);
-background-image: linear-gradient(top, #bbb, #000);
-
 @font-face {
-  font-family: "MyFont";
-  src: url("myfont.eot");
-  src: url("myfont.eot?#iefix") format("embedded-opentype"),
-    url("myfont.woff") format("woff"), url("myfont.ttf") format("truetype"),
-    url("myfont.svg#webfont") format("svg");
+  font-family: PTSans-Regular;
+  src: url("assets/fonts/PTSans-Regular.ttf");
 }
 
-h1 {
-  font-family: "MyFont", sans-serif;
+@font-face {
+  font-family: "PTSans-Bold";
+  src: url("assets/fonts/PTSans-Bold.ttf");
+  font-weight: 300;
+}
+
+* {
+  box-sizing: border-box;
 }
