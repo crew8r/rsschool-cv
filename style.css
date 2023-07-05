@@ -156,3 +156,19 @@ body {
   border: 1px solid #829985;
   border-radius: 50%;
 }
+
+.rss {
+  width: 121px;
+  height: 45px;
+  background-image: url("./assets/img/image.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  background-color: #829985;
+}
+
+.header {
+  background-color: aqua;
+}
