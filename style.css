@@ -124,7 +124,7 @@ body {
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -183,7 +183,7 @@ p {
   color: gray;
 }
 
-#grey {
+.grey {
   color: grey;
 }
 
@@ -193,11 +193,6 @@ blockquote {
 }
 #profile {
   font-size: large;
-}
-
-.firstname {
-  font-size: 40px;
-  text-transform: capitalize;
 }
 
 .rss {
@@ -241,6 +236,18 @@ a:-webkit-any-link {
 
 .contacts-item:nth-child(1):before {
   background-image: url(./assets/location.svg);
+}
+
+.email-item:nth-child(2):before {
+  background-image: url(./assets/email.svg);
+}
+
+.github-item:nth-child(3):before {
+  background-image: url(./assets/github.svg);
+}
+
+.discord-item:nth-child(4):before {
+  background-image: url(./assets/discord.svg);
 }
 
 .section-item {
