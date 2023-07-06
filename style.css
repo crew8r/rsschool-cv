@@ -1,26 +1,269 @@
-background-color: #000;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbb', endColorstr='#000');
-background-image: -webkit-gradient(
-  linear,
-  left top,
-  left bottom,
-  from(#bbb),
-  to(#000)
-);
-background-image: -webkit-linear-gradient(top, #bbb, #000);
-background-image: -moz-linear-gradient(top, #bbb, #000);
-background-image: -ms-linear-gradient(top, #bbb, #000);
-background-image: -o-linear-gradient(top, #bbb, #000);
-background-image: linear-gradient(top, #bbb, #000);
-
 @font-face {
-  font-family: "MyFont";
-  src: url("myfont.eot");
-  src: url("myfont.eot?#iefix") format("embedded-opentype"),
-    url("myfont.woff") format("woff"), url("myfont.ttf") format("truetype"),
-    url("myfont.svg#webfont") format("svg");
+  font-family: "PTSans-Regular";
+  src: url("assets/fonts/PTSans-Regular.ttf");
 }
 
-h1 {
-  font-family: "MyFont", sans-serif;
+@font-face {
+  font-family: "PTSans-Bold";
+  src: url("assets/fonts/PTSans-Bold.ttf");
+  font-weight: 300;
+}
+
+/*
+селектор (звездочка) подразумевает все элементы встретившиеся на странице.
+ Добавьте в файл со стилями свойство.
+ Благодаря свойству box-sizing: border-box; границы и внутренние отступы будут учитываться в значениях, 
+ которые вы указываете в ширине и высоте элемента.
+  Это упрощает работу с размерами, позволяет указывать их более логично
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+border: 3px solid black;
+
+/* прижимаем footer к низу страницы
+свойство justify-content определяет выравнивание элементов по главной оси. По умолчанию у flexbox главная ось горизонтальная и 
+свойство justify-content выравнивает элементы по горизонтали. Но указав свойство flex-direction: column;, мы тем самым переопределили направление главной оси. 
+Поэтому в данном случае justify-content определяет выравнивание по вертикали.
+
+Свойство justify-content: space-between; указывает, что все элементы размещаются на максимальном расстоянии друг от друга, 
+крайние прижаты к границам родителя.
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*
+элемент с классом container, ограничивает 
+ширину контента и центрирует его на странице по горизонтали.
+Как любой блочный элемент, контейнер стремится занять всю ширину окна браузера. 
+Так и происходит до тех пор, пока ширина окна не превышает 1440px, 
+если окно браузера больше, свойство max-width ограничивает ширину контейнера.
+*/
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/*
+Чтобы разместить все элементы навигации в строку, элементу .nav-list указываем 
+свойство display: flex;, сдвинуть их вправо позволит свойство justify-content: flex-end;, 
+выровнять по центру по высоте свойство align-items: center;
+*/
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/*
+Убираем стандартные маркеры
+*/
+.nav-list {
+  list-style: none;
+}
+
+/*
+Добавляем отступы между элементами списка
+*/
+.nav-link {
+  padding: 0 15px;
+  line-height: 40px;
+}
+
+.nav-link {
+  transition: 0.3s;
+}
+
+/*
+Чтобы прокрутка происходила плавно, в css-файл добавьте свойство scroll-behavior.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+.section-item a {
+  color: #829985;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+.section-item a:hover {
+  color: #001cb8;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  width: 50%;
+}
+
+/*
+при уменьшении ширины экрана до 768px, секция будет занимать всю ширину
+*/
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+  }
+}
+
+/* font syle */
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4d2323;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: black;
+  text-transform: capitalize;
+}
+
+.link {
+  text-decoration: none;
+  color: #829985;
+  transition: color 0.5s;
+}
+
+.link:hover {
+  color: #5d7260;
+}
+
+.section-item {
+  position: relative;
+  padding-left: 30px;
+}
+
+.section-item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #829985;
+  border-radius: 50%;
+}
+
+.footer {
+  background-color: #829985;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.header {
+  background-color: rgba(0, 150, 0, 0.1);
+}
+
+.green {
+  color: black;
+}
+
+p {
+  color: gray;
+}
+
+#grey {
+  color: grey;
+}
+
+blockquote {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: gray;
+}
+#profile {
+  font-size: large;
+}
+
+.firstname {
+  font-size: 40px;
+  text-transform: capitalize;
+}
+
+.rss {
+  width: 121px;
+  height: 45px;
+  background-image: url(./assets/footer-logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.section-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  filter: grayscale(0.1) brightness(1.05);
+  transition: 0.3s;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: white;
+}
+
+.github {
+  color: #fff;
+  text-decoration: none;
+  line-height: 45px;
+}
+
+.contacts-item:nth-child(1):before {
+  background-image: url(./assets/location.svg);
+}
+
+.section-item {
+  position: relative;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  padding-left: 30px;
+  color: gray;
+}
+
+.section-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-item::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background-size: 14px 14px;
 }
