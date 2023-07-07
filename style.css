@@ -21,8 +21,6 @@
   box-sizing: border-box;
 }
 
-border: 3px solid black;
-
 /* прижимаем footer к низу страницы
 свойство justify-content определяет выравнивание элементов по главной оси. По умолчанию у flexbox главная ось горизонтальная и 
 свойство justify-content выравнивает элементы по горизонтали. Но указав свойство flex-direction: column;, мы тем самым переопределили направление главной оси. 
@@ -130,6 +128,10 @@ body {
   letter-spacing: 5px;
   color: black;
   text-transform: capitalize;
+}
+
+.section {
+  border-bottom: 2px solid rgba(0, 150, 0, 0.1);
 }
 
 .link {
