@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "PTSans-Regular";
   src: url("assets/fonts/PTSans-Regular.ttf");
@@ -27,10 +31,6 @@ body {
   justify-content: space-between;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -56,10 +56,13 @@ body {
 Добавляем отступы между элементами списка
 */
 .nav-link {
-  padding: 0 25px;
-  line-height: 50px;
-  color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 0 12px;
   text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 50px;
+  color: #fff;
 }
 
 .nav-link {
@@ -68,10 +71,6 @@ body {
 
 .underline-text {
   text-decoration: underline;
-}
-
-a:link {
-  color: pink;
 }
 
 .section-item a {
@@ -99,6 +98,13 @@ html {
   width: 50%;
 }
 
+.section {
+  width: calc(50% - 20px);
+  padding: 10px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #672f2f;
+}
+
 /*
 при уменьшении ширины экрана до 768px, секция будет занимать всю ширину
 */
@@ -123,12 +129,12 @@ html {
 
 .link {
   text-decoration: none;
-  color: #bae2bf;
+  color: #45a051;
   transition: color 0.5s;
 }
 
 .link:hover {
-  color: #f1f0aa;
+  color: #aaf1b9;
 }
 
 .section-item {
@@ -161,6 +167,8 @@ html {
 }
 
 .header {
+  top: 0;
+  height: 100px;
   background-color: rgba(0, 150, 0, 0.1);
 }
 
@@ -185,13 +193,13 @@ blockquote {
 }
 
 .section-logo {
-  width: 150px;
-  height: 150px;
-  object-fit: fill;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  filter: grayscale(0.1) brightness(1.05);
-  transition: 0.3s;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+  filter: grayscale(0.3) brightness(1.1);
+  transition: 0.2s;
 }
 
 img {
@@ -253,9 +261,6 @@ img {
 .grey {
   color: grey;
 }
-a {
-  color: rgb(223, 57, 140);
-}
 
 a:link {
   text-decoration: none;
@@ -263,7 +268,14 @@ a:link {
 
 a:hover {
   text-decoration: solid;
-  background-color: #c7cfc9;
+  background-color: #b9e9c5;
+  border-radius: 30px;
+  transition: 2s;
+}
+
+.nav-link::before {
+  text-decoration: solid;
+  background-color: #002b0b;
   border-radius: 30px;
   transition: 2s;
 }
