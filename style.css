@@ -9,26 +9,17 @@
   font-weight: 300;
 }
 
-/*
-селектор (звездочка) подразумевает все элементы встретившиеся на странице.
- Добавьте в файл со стилями свойство.
- Благодаря свойству box-sizing: border-box; границы и внутренние отступы будут учитываться в значениях, 
- которые вы указываете в ширине и высоте элемента.
-  Это упрощает работу с размерами, позволяет указывать их более логично
-*/
-
-* {
-  box-sizing: border-box;
+body {
+  font-family: "PTSans-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4d2323;
+  border: 1px solid red;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-
-/* прижимаем footer к низу страницы
-свойство justify-content определяет выравнивание элементов по главной оси. По умолчанию у flexbox главная ось горизонтальная и 
-свойство justify-content выравнивает элементы по горизонтали. Но указав свойство flex-direction: column;, мы тем самым переопределили направление главной оси. 
-Поэтому в данном случае justify-content определяет выравнивание по вертикали.
-
-Свойство justify-content: space-between; указывает, что все элементы размещаются на максимальном расстоянии друг от друга, 
-крайние прижаты к границам родителя.
-*/
 
 body {
   display: flex;
@@ -36,13 +27,10 @@ body {
   justify-content: space-between;
 }
 
-/*
-элемент с классом container, ограничивает 
-ширину контента и центрирует его на странице по горизонтали.
-Как любой блочный элемент, контейнер стремится занять всю ширину окна браузера. 
-Так и происходит до тех пор, пока ширина окна не превышает 1440px, 
-если окно браузера больше, свойство max-width ограничивает ширину контейнера.
-*/
+* {
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -57,11 +45,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  text-decoration: none;
 }
 
-/*
-Убираем стандартные маркеры
-*/
 .nav-list {
   list-style: none;
 }
@@ -70,19 +56,22 @@ body {
 Добавляем отступы между элементами списка
 */
 .nav-link {
-  padding: 0 15px;
-  line-height: 40px;
+  padding: 0 25px;
+  line-height: 50px;
+  color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
 .nav-link {
-  transition: 0.3s;
+  transition: 1s;
 }
 
-/*
-Чтобы прокрутка происходила плавно, в css-файл добавьте свойство scroll-behavior.
-*/
-html {
-  scroll-behavior: smooth;
+.underline-text {
+  text-decoration: underline;
+}
+
+a:link {
+  color: pink;
 }
 
 .section-item a {
@@ -91,7 +80,14 @@ html {
   transition: color 0.5s;
 }
 .section-item a:hover {
-  color: #001cb8;
+  color: #4d2323;
+}
+
+/*
+Чтобы прокрутка происходила плавно, в css-файл добавьте свойство scroll-behavior.
+*/
+html {
+  scroll-behavior: smooth;
 }
 
 .main-container {
@@ -112,36 +108,27 @@ html {
   }
 }
 
-/* font syle */
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #4d2323;
-}
-
 .section-title {
   font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: black;
+  color: rgb(2, 46, 22);
   text-transform: capitalize;
 }
 
 .section {
-  border-bottom: 2px solid rgba(0, 150, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 150, 0, 0.1) f;
 }
 
 .link {
   text-decoration: none;
-  color: #829985;
+  color: #bae2bf;
   transition: color 0.5s;
 }
 
 .link:hover {
-  color: #5d7260;
+  color: #f1f0aa;
 }
 
 .section-item {
@@ -177,16 +164,8 @@ body {
   background-color: rgba(0, 150, 0, 0.1);
 }
 
-.green {
-  color: black;
-}
-
 p {
   color: gray;
-}
-
-.grey {
-  color: grey;
 }
 
 blockquote {
@@ -208,7 +187,7 @@ blockquote {
 .section-logo {
   width: 150px;
   height: 150px;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 50%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   filter: grayscale(0.1) brightness(1.05);
@@ -220,19 +199,13 @@ img {
   overflow: clip;
 }
 
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 .nav-link {
-  color: white;
+  color: rgb(168, 201, 165);
 }
 
 .github {
   color: #fff;
-  text-decoration: none;
+  text-decoration: solid;
   line-height: 45px;
 }
 
@@ -275,4 +248,22 @@ a:-webkit-any-link {
   width: 14px;
   height: 14px;
   background-size: 14px 14px;
+}
+
+.grey {
+  color: grey;
+}
+a {
+  color: rgb(223, 57, 140);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: solid;
+  background-color: #c7cfc9;
+  border-radius: 30px;
+  transition: 2s;
 }

@@ -9,8 +9,8 @@
   </head>
   <body>
     <header class="header">
-      <div class="container main-container">
-        <nav class="nav green">
+      <div class="container header-container">
+        <nav class="nav">
           <ul class="nav-list">
             <li class="nav-item">
               <a href="#contacts" class="nav-link">Contacts</a>
@@ -21,7 +21,9 @@
             <li class="nav-item">
               <a href="#skills" class="nav-link">Skills</a>
             </li>
-            <li class="nav-item"><a href="#code" class="nav-link">Code</a></li>
+            <li class="nav-item">
+              <a href="#code" class="nav-link">Code</a>
+            </li>
             <li class="nav-item">
               <a href="#courses" class="nav-link">Courses</a>
             </li>
@@ -35,19 +37,24 @@
               <a href="#languages" class="nav-link">Languages</a>
             </li>
           </ul>
-          <img
-            src="./assets/img/image.jpg"
-            alt="my photo"
-            class="section-logo"
-          />
         </nav>
       </div>
     </header>
 
     <main class="main">
-      <div class="container">
+      <div class="container main-container">
         <section class="section">
-          <h1>Amelkevich Andrey</h1>
+          <img
+            src="./assets/img/image.jpg"
+            alt="my photo"
+            class="section-logo"
+          />
+        </section>
+        <section class="section">
+          <h1 class="section-title">
+            <p>Amelkevich Andrey</p>
+            <p>Front-End Developer</p>
+          </h1>
         </section>
         <section class="section" id="contacts">
           <h2 class="section-title">Contacts</h2>
@@ -72,7 +79,7 @@
         <section class="section" id="skills">
           <h2 class="section-title">Skills</h2>
           <ul class="grey">
-            <li class="grey">I study HTML,CSS and JS</li>
+            <li>I study HTML,CSS and JS</li>
             <li>B2C, B2B sales MI, PA, IS</li>
             <li>International negotiations</li>
             <li>
@@ -129,5 +136,6 @@
         <a href="https://rs.school/js/" class="rss"></a>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
