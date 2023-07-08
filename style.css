@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "PTSans-Regular";
   src: url("assets/fonts/PTSans-Regular.ttf");
@@ -9,28 +13,16 @@
   font-weight: 300;
 }
 
-/*
-селектор (звездочка) подразумевает все элементы встретившиеся на странице.
- Добавьте в файл со стилями свойство.
- Благодаря свойству box-sizing: border-box; границы и внутренние отступы будут учитываться в значениях, 
- которые вы указываете в ширине и высоте элемента.
-  Это упрощает работу с размерами, позволяет указывать их более логично
-*/
-
-* {
-  box-sizing: border-box;
+body {
+  font-family: "PTSans-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4d2323;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-
-border: 3px solid black;
-
-/* прижимаем footer к низу страницы
-свойство justify-content определяет выравнивание элементов по главной оси. По умолчанию у flexbox главная ось горизонтальная и 
-свойство justify-content выравнивает элементы по горизонтали. Но указав свойство flex-direction: column;, мы тем самым переопределили направление главной оси. 
-Поэтому в данном случае justify-content определяет выравнивание по вертикали.
-
-Свойство justify-content: space-between; указывает, что все элементы размещаются на максимальном расстоянии друг от друга, 
-крайние прижаты к границам родителя.
-*/
 
 body {
   display: flex;
@@ -38,13 +30,6 @@ body {
   justify-content: space-between;
 }
 
-/*
-элемент с классом container, ограничивает 
-ширину контента и центрирует его на странице по горизонтали.
-Как любой блочный элемент, контейнер стремится занять всю ширину окна браузера. 
-Так и происходит до тех пор, пока ширина окна не превышает 1440px, 
-если окно браузера больше, свойство max-width ограничивает ширину контейнера.
-*/
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -59,11 +44,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  text-decoration: none;
 }
 
-/*
-Убираем стандартные маркеры
-*/
 .nav-list {
   list-style: none;
 }
@@ -72,19 +55,21 @@ body {
 Добавляем отступы между элементами списка
 */
 .nav-link {
-  padding: 0 15px;
-  line-height: 40px;
+  position: relative;
+  padding: 0 12px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 50px;
+  color: #fff;
 }
 
 .nav-link {
-  transition: 0.3s;
+  transition: 1s;
 }
 
-/*
-Чтобы прокрутка происходила плавно, в css-файл добавьте свойство scroll-behavior.
-*/
-html {
-  scroll-behavior: smooth;
+.underline-text {
+  text-decoration: underline;
 }
 
 .section-item a {
@@ -93,7 +78,14 @@ html {
   transition: color 0.5s;
 }
 .section-item a:hover {
-  color: #001cb8;
+  color: #4d2323;
+}
+
+/*
+Чтобы прокрутка происходила плавно, в css-файл добавьте свойство scroll-behavior.
+*/
+html {
+  scroll-behavior: smooth;
 }
 
 .main-container {
@@ -105,6 +97,13 @@ html {
   width: 50%;
 }
 
+.section {
+  width: calc(50% - 20px);
+  padding: 10px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #672f2f;
+}
+
 /*
 при уменьшении ширины экрана до 768px, секция будет занимать всю ширину
 */
@@ -114,32 +113,27 @@ html {
   }
 }
 
-/* font syle */
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #4d2323;
-}
-
 .section-title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: black;
+  color: rgb(2, 46, 22);
   text-transform: capitalize;
+}
+
+.section {
+  border-bottom: 2px solid rgba(0, 150, 0, 0.1) f;
 }
 
 .link {
   text-decoration: none;
-  color: #829985;
+  color: #45a051;
   transition: color 0.5s;
 }
 
 .link:hover {
-  color: #5d7260;
+  color: #aaf1b9;
 }
 
 .section-item {
@@ -172,19 +166,13 @@ body {
 }
 
 .header {
+  top: 0;
+  height: 100px;
   background-color: rgba(0, 150, 0, 0.1);
-}
-
-.green {
-  color: black;
 }
 
 p {
   color: gray;
-}
-
-#grey {
-  color: grey;
 }
 
 blockquote {
@@ -193,11 +181,6 @@ blockquote {
 }
 #profile {
   font-size: large;
-}
-
-.firstname {
-  font-size: 40px;
-  text-transform: capitalize;
 }
 
 .rss {
@@ -209,13 +192,13 @@ blockquote {
 }
 
 .section-logo {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  filter: grayscale(0.1) brightness(1.05);
-  transition: 0.3s;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+  filter: grayscale(0.3) brightness(1.1);
+  transition: 0.2s;
 }
 
 img {
@@ -223,24 +206,30 @@ img {
   overflow: clip;
 }
 
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 .nav-link {
-  color: white;
+  color: rgb(35, 80, 35);
 }
 
 .github {
-  color: #fff;
-  text-decoration: none;
-  line-height: 45px;
+  color: #ffffff;
+  text-decoration: solid;
+  line-height: 90px;
 }
 
 .contacts-item:nth-child(1):before {
   background-image: url(./assets/location.svg);
+}
+
+.email-item:nth-child(2):before {
+  background-image: url(./assets/email.svg);
+}
+
+.github-item:nth-child(3):before {
+  background-image: url(./assets/github.svg);
+}
+
+.discord-item:nth-child(4):before {
+  background-image: url(./assets/discord.svg);
 }
 
 .section-item {
@@ -266,4 +255,42 @@ a:-webkit-any-link {
   width: 14px;
   height: 14px;
   background-size: 14px 14px;
+}
+
+.grey {
+  color: grey;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: solid;
+  background-color: #b9e9c5;
+  border-radius: 30px;
+  transition: 2s;
+}
+
+.nav-link::before {
+  text-decoration: solid;
+  background-color: #002b0b;
+  border-radius: 30px;
+  transition: 2s;
+}
+
+.photo-center {
+  align-items: center;
+}
+
+.summury::before {
+  content: ' " ';
+  font-size: 30px;
+  color: rgb(70, 68, 68);
+}
+
+.summury::after {
+  content: ' " ';
+  font-size: 30px;
+  color: rgb(70, 68, 68);
 }
